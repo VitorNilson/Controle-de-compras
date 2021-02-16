@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.code.bang.compras.activity.AdicionarItem">
+
+    <EditText
+        android:id="@+id/activity_adicionar_item_item"
+        android:inputType="textCapWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item"
+        android:layout_margin="8dp" />
+
+        <EditText
+        android:id="@+id/activity_adicionar_item_quantidade"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantidade"
+        android:layout_margin="8dp" />
+        <EditText
+        android:id="@+id/activity_adicionar_item_valor"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor unitário"
+        android:layout_margin="8dp" />
+
+    <Button
+        android:id="@+id/activity_adicionar_item_botao_adicionar"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADICIONAR"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/design_default_color_on_primary"
+
+        />
+
+
+</LinearLayout>
