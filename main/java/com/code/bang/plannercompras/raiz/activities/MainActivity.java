@@ -1,24 +1,26 @@
 package com.code.bang.plannercompras.raiz.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.code.bang.plannercompras.raiz.item.Item;
 import com.code.bang.plannercompras.R;
 import com.code.bang.plannercompras.raiz.dao.DataAcessObject;
+import com.code.bang.plannercompras.raiz.item.Item;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    static int contador = 0;
+    Dialog dialog;
     final static DataAcessObject dao = new DataAcessObject();
     Item exibeValor = new Item();
 
@@ -28,8 +30,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Compras -" + " Valor total R$ " + exibeValor.getValorTotal());
         configuraListenerFAB();
-
+        dialog = new Dialog(this);
+        criaPopUp();
     }
+
+    private void criaPopUp() {
+
+        dialog.setContentView(R.layout.popup_main);
+        TextView fechaPopUp = (TextView) dialog.findViewById(R.id.botao_fechar_popup);
+        fechaPopUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                contador++;
+            }
+        });
+        if(contador == 0 ){
+            dialog.show();
+        }
+
+        }
 
     private void configuraListenerFAB() {
         FloatingActionButton fab = findViewById(R.id.activity_lista_fab_adicao);
@@ -56,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "long click", Toast.LENGTH_SHORT).show();
+             // Toast.makeText(MainActivity.this, "long click", Toast.LENGTH_SHORT).show();
                 Item itemSelecionado = exibirListaItens.get(position);
                 dao.removeItem(itemSelecionado);
                 finish();
