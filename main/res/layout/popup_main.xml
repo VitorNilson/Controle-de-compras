@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="450dp"
+    android:padding="5dp"
+    android:layout_gravity="center"
+
+    >
+
+    <TextView
+        android:id="@+id/botao_fechar_popup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="#FF0000"
+        android:text="X"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:textSize="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="Clique no botão azul para adicionar itens ao carrinho.\n\n
+Clique no item adicionado para edita-lo.(Recomendo excluir o item caso queira alterar valor ou quantidade)\n\n
+Clique e segure para excluir o item do carrinho.\n\n
+Para abrir um novo carrinho encerre o app."
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

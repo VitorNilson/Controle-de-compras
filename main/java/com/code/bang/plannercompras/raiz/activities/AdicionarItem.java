@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.code.bang.plannercompras.R;
 import com.code.bang.plannercompras.raiz.dao.DataAcessObject;
 import com.code.bang.plannercompras.raiz.item.Item;
-import com.code.bang.plannercompras.R;
 
 public class AdicionarItem extends AppCompatActivity {
 
@@ -31,8 +30,6 @@ public class AdicionarItem extends AppCompatActivity {
         inicializaCampos();
         configuraBotaoAdiciona();
         recebeItemSerializado();
-
-
     }
 
     private void configuraBotaoAdiciona() {
@@ -48,7 +45,7 @@ public class AdicionarItem extends AppCompatActivity {
                     dao.adiciona(recebeItem);
                 }
 
-                Toast.makeText(AdicionarItem.this, recebeItem.getValorTotal().toString(), Toast.LENGTH_SHORT).show();
+             //Toast.makeText(AdicionarItem.this, recebeItem.getValorTotal().toString(), Toast.LENGTH_SHORT).show();
 
                 Intent mudaDeActivity = new Intent(AdicionarItem.this, MainActivity.class);
                 finish();

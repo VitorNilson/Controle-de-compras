@@ -8,6 +8,7 @@ public class Item implements Serializable {
     private Integer quantidade;
     private Double valorItem;
     private static Double valorTotal = 0.0;
+    private static Double valorTotalItem = 0.0;
     private Integer id = 0;
 
     public Item() {
@@ -76,6 +77,6 @@ public class Item implements Serializable {
 
     public void subtraiValor() {
 
-        this.valorTotal = this.valorTotal - this.valorItem ;
+        this.valorTotal = this.valorTotal - (this.valorItem * this.quantidade) ;
     }
 }
